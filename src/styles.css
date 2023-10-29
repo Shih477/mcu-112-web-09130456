@@ -3,11 +3,35 @@ body {
 }
 
 div.container {
-  border-style: solid;
   width: 550px;
 }
 
 input[type="checkbox"] {
   width: 25px;
   height: 25px;
+}
+
+.form {
+  border: solid 1px #ddd;
+}
+
+.form input {
+  border: none;
+}
+
+.main {
+  border: solid 1px #ddd;
+  border-bottom: none;
+}
+
+.main > ul > li {
+  border-bottom: solid 1px #ededed;
+}
+
+footer {
+  border: solid 1px #ddd;
+}
+
+button {
+  border: none;
 }
