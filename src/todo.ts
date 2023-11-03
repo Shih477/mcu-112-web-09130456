@@ -1,12 +1,9 @@
 export class Todo {
-  constructor(id: number, content: string) {
-    this.id = id;
-    this.content = content;
-    this.hasFinished = false;
-  }
+  constructor(
+    public id: number,
+    public content: string,
+    public hasFinished = false
+  ) {}
 
-  id: number;
-  content: string;
-  hasFinished: boolean;
-  finishDate: Date | undefined;
+  finishDate?: Date;
 }
