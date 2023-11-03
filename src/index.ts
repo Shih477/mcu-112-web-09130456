@@ -1,8 +1,6 @@
-const todo = {
-  id: 1,
-  content: "期中考作業",
-  hasFinished: false,
-  finishDate: undefined,
-};
+import { Todo } from "./todo";
+
+const todo = new Todo(1, "期中考作業");
+
 console.log("To Do: ", todo);
 console.table(todo);
