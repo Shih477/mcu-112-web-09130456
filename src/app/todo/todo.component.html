@@ -6,5 +6,6 @@
     已完成
   </button>
   <span [class.completed]="hasFinished">{{ id }}. {{ content }}</span>
+  <span class="finish-date">{{ finishDate | date : "yyyy/MM/dd" }}</span>
 </span>
 <button class="delete" type="button">X</button>
