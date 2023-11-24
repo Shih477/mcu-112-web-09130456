@@ -1,4 +1,9 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+  booleanAttribute,
+  numberAttribute,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,10 +14,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './todo.component.css',
 })
 export class TodoComponent {
-  @Input()
+  @Input({ required: true, transform: numberAttribute })
+  id!: number;
+
+  @Input({ required: true })
   content!: string;
 
-  @Input()
+  @Input({ transform: booleanAttribute })
   hasFinished!: boolean;
 
   onSetStatus(hasFinished: boolean): void {
