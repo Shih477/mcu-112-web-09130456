@@ -1,3 +1,7 @@
-<button type="button" (click)="onSetStatus(false)">未完成</button>
-<button type="button" (click)="onSetStatus(true)">未完成</button>
+<button type="button" [disabled]="!hasFinished" (click)="onSetStatus(false)">
+  未完成
+</button>
+<button type="button" [disabled]="hasFinished" (click)="onSetStatus(true)">
+  已完成
+</button>
 {{ content }} - {{ hasFinished }}
