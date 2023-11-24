@@ -1,0 +1,13 @@
+div.container {
+  margin: 0px auto;
+  width: 550px;
+}
+
+.main {
+  border: solid 1px #ddd;
+  border-bottom: none;
+}
+
+.app-todo {
+  border-bottom: solid 1px #ededed;
+}
