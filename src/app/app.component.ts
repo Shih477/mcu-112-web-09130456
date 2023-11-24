@@ -1,11 +1,12 @@
 import { HeaderComponent } from './header/header.component';
 import { Component } from '@angular/core';
 import { TodoComponent } from './todo/todo.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, TodoComponent],
+  imports: [HeaderComponent, TodoComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
