@@ -1,12 +1,14 @@
-import { Todo } from './todo';
+export class Todo {
+  constructor(
+    public id: number,
+    public content: string,
+    public hasFinished: boolean = false
+  ) {}
 
-const todos = [
-  new Todo(1, '期中考作業'),
-  new Todo(2, '期中考作業-2'),
-  new Todo(3, '期中考作業-3'),
-];
+  finishDate?: Date;
 
-todos[0].setFinished(new Date());
-
-console.log('To Do: ', todos);
-console.table(todos);
+  setFinished(finishDate: Date): void {
+    this.hasFinished = true;
+    this.finishDate = finishDate;
+  }
+}

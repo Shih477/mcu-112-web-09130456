@@ -1,11 +1,21 @@
 <span>
-  <button type="button" [disabled]="!hasFinished" (click)="onSetStatus(false)">
+  <button
+    type="button"
+    [disabled]="!task.hasFinished"
+    (click)="onSetStatus(false)"
+  >
     未完成
   </button>
-  <button type="button" [disabled]="hasFinished" (click)="onSetStatus(true)">
+  <button
+    type="button"
+    [disabled]="task.hasFinished"
+    (click)="onSetStatus(true)"
+  >
     已完成
   </button>
-  <span [class.completed]="hasFinished">{{ id }}. {{ content }}</span>
-  <span class="finish-date">{{ finishDate | date : "yyyy/MM/dd" }}</span>
+  <span [class.completed]="task.hasFinished">
+    {{ task.id }}. {{ task.content }}
+  </span>
+  <span class="finish-date">{{ task.finishDate | date : "yyyy/MM/dd" }}</span>
 </span>
 <button class="delete" type="button">X</button>
