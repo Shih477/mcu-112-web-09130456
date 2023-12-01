@@ -1,7 +1,6 @@
 <div class="container">
   <app-header></app-header>
-  <button type="button" (click)="onSet()">Set</button>
-  <button type="button" (click)="onClear()">Clear</button>
+  <button type="button" (click)="onAdd()">Add</button>
   <section class="main">
     <app-todo-list
       [tasks]="taskService.tasks"

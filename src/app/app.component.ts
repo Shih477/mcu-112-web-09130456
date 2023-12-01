@@ -16,6 +16,10 @@ import { TaskService } from './services/task.service';
 export class AppComponent {
   taskService = inject(TaskService);
 
+  onAdd(): void {
+    this.taskService.add('待辦事項 C');
+  }
+
   tasks = [new Todo(1, '待辦事項 A'), new Todo(2, '待辦事項 B')];
 
   onStateChange(task: { index: number; state: boolean }): void {
@@ -25,13 +29,5 @@ export class AppComponent {
       this.tasks[task.index].finishDate = undefined;
       this.tasks[task.index].hasFinished = false;
     }
-  }
-
-  onSet(): void {
-    this.tasks = [new Todo(1, '待辦事項 A'), new Todo(2, '待辦事項 B')];
-  }
-
-  onClear(): void {
-    this.tasks = [];
   }
 }
