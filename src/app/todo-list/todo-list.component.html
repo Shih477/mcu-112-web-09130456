@@ -1,5 +1,9 @@
-<app-todo
-  *ngFor="let task of tasks; let index = index"
-  [task]="task"
-  (stateChange)="StateChange.emit({ index: index, state: $event })"
-></app-todo>
+<div *ngIf="tasks.length > 0">
+  <app-todo
+    *ngFor="let task of tasks; let index = index"
+    [task]="task"
+    (stateChange)="stateChange.emit({ index: index, state: $event })"
+  ></app-todo>
+</div>
+
+<div *ngIf="tasks.length === 0" class="empty">沒有待辦事項</div>
