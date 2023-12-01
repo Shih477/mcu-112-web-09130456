@@ -18,4 +18,4 @@
   </span>
   <span class="finish-date">{{ task.finishDate | date : "yyyy/MM/dd" }}</span>
 </span>
-<button class="delete" type="button">X</button>
+<button class="delete" type="button" (click)="remove.emit()">X</button>

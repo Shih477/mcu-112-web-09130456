@@ -4,6 +4,7 @@
   <section class="main">
     <app-todo-list
       [tasks]="taskService.tasks"
+      (remove)="onRemove($event)"
       (stateChange)="onStateChange($event)"
     ></app-todo-list>
   </section>

@@ -23,4 +23,9 @@ export class TaskService {
     this.tasks[index].hasFinished = hasFinished;
     this.tasks[index].finishDate = hasFinished ? new Date() : undefined;
   }
+
+  remove(id: number): void {
+    const index = this.tasks.findIndex((task) => task.id === id);
+    this.tasks.splice(index, 1);
+  }
 }

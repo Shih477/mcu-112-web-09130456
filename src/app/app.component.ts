@@ -20,6 +20,9 @@ export class AppComponent {
     this.taskService.add('待辦事項 C');
   }
 
+  onRemove(id: number): void {
+    this.taskService.remove(id);
+  }
   tasks = [new Todo(1, '待辦事項 A'), new Todo(2, '待辦事項 B')];
 
   onStateChange({ id, state }: { id: number; state: boolean }): void {
