@@ -4,7 +4,7 @@
   <button type="button" (click)="onClear()">Clear</button>
   <section class="main">
     <app-todo-list
-      [tasks]="tasks"
+      [tasks]="taskService.tasks"
       (stateChange)="onStateChange($event)"
     ></app-todo-list>
   </section>
