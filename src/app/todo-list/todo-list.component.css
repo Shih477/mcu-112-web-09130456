@@ -1,0 +1,7 @@
+:host {
+  display: block;
+}
+
+.app-todo {
+  border-bottom: solid 1px #ededed;
+}

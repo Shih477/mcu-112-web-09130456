@@ -1,9 +1,7 @@
 <div class="container">
   <app-header></app-header>
   <section class="main">
-    <app-todo [task]="task" (stateChange)="onStateChange($event)"></app-todo>
-    <app-todo [task]="task" (stateChange)="onStateChange($event)"></app-todo>
+    <app-todo-list></app-todo-list>
   </section>
   <app-footer></app-footer>
 </div>
-<pre>{{ task | json }}</pre>
