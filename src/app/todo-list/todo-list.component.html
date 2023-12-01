@@ -1,1 +1,5 @@
-<app-todo [task]="task" (stateChange)="onStateChange($event)"></app-todo>
+<app-todo
+  *ngFor="let task of tasks; let index = index"
+  [task]="task"
+  (stateChange)="StateChange.emit({ index: index, state: $event })"
+></app-todo>

@@ -1,7 +1,10 @@
 <div class="container">
   <app-header></app-header>
   <section class="main">
-    <app-todo-list></app-todo-list>
+    <app-todo-list
+      [tasks]="tasks"
+      (StateChange)="onStateChange($event)"
+    ></app-todo-list>
   </section>
   <app-footer></app-footer>
 </div>
