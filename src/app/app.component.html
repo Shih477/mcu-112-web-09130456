@@ -3,7 +3,7 @@
   <button type="button" (click)="onAdd()">Add</button>
   <section class="main">
     <app-todo-list
-      [tasks]="taskService.tasks"
+      [tasks]="tasks"
       (remove)="onRemove($event)"
       (stateChange)="onStateChange($event)"
     ></app-todo-list>
