@@ -8,6 +8,10 @@ import { Todo } from '../model/todo';
 export class TaskService {
   private tasks: Todo[] = [];
 
+  getById(id: number): Todo | undefined {
+    return this.tasks.find((task) => task.id === id)!;
+  }
+
   getAll(): Todo[] {
     return this.tasks;
   }

@@ -17,5 +17,8 @@ export class TodoListComponent {
   remove = new EventEmitter<number>();
 
   @Output()
+  view = new EventEmitter<number>();
+
+  @Output()
   stateChange = new EventEmitter<{ id: number; state: boolean }>();
 }

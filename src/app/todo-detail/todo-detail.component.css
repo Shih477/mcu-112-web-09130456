@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  height: 40px;
+}
+
+tr > td:first-child {
+  width: 150px;
+  text-align: center;
+}
+
+tr > td:last-child {
+  padding-left: 20px;
+}

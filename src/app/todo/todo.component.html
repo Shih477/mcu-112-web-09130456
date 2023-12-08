@@ -15,6 +15,7 @@
   </button>
   <span [class.completed]="task.hasFinished">
     {{ task.id }}. {{ task.content }}
+    <button type="button" (click)="view.emit()">明細</button>
   </span>
   <span class="finish-date">{{ task.finishDate | date : "yyyy/MM/dd" }}</span>
 </span>

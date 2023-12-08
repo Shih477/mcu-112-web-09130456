@@ -7,3 +7,7 @@ div.container {
   border: solid 1px #ddd;
   border-bottom: none;
 }
+
+.todo-detail {
+  margin-top: 20px;
+}
