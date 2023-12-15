@@ -1,10 +1,12 @@
-<table border="1">
-  <tr>
-    <td>編號</td>
-    <td>{{ task?.id }}</td>
-  </tr>
-  <tr>
-    <td>內容</td>
-    <td>{{ task?.content }}</td>
-  </tr>
-</table>
+<ng-container *ngIf="task$ | async as task">
+  <table border="1">
+    <tr>
+      <td>編號</td>
+      <td>{{ task?.id }}</td>
+    </tr>
+    <tr>
+      <td>內容</td>
+      <td>{{ task?.content }}</td>
+    </tr>
+  </table>
+</ng-container>

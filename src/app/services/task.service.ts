@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Todo } from '../model/todo';
 import { Observable, of } from 'rxjs';
+
+import { Todo } from '../model/todo';
 
 @Injectable({
   providedIn: 'root',
@@ -8,15 +9,18 @@ import { Observable, of } from 'rxjs';
 export class TaskService {
   private tasks: Todo[] = [];
 
-  getById(id: number): Todo | undefined {
-    return this.tasks.find((task) => task.id === id)!;
+  getById(id: number): Observable<Todo | undefined> {
+    console.log('Task Service - getById');
+    return of(this.tasks.find((task) => task.id === id));
   }
 
-  getAll(): Todo[] {
-    return this.tasks;
+  getAll(): Observable<Todo[]> {
+    console.log('Task Service - getAll');
+    return of(this.tasks);
   }
 
   add(content: string): Observable<Todo> {
+    console.log('Task Service - add');
     const id =
       this.tasks.length === 0
         ? 1
@@ -26,14 +30,18 @@ export class TaskService {
     return of(task);
   }
 
-  updateState(id: number, hasFinished: boolean): void {
+  updateState({ id }: Todo, hasFinished: boolean): Observable<Todo> {
+    console.log('Task Service - updateState');
     const index = this.tasks.findIndex((task) => task.id === id);
     this.tasks[index].hasFinished = hasFinished;
     this.tasks[index].finishDate = hasFinished ? new Date() : undefined;
+    return of(this.tasks[index]);
   }
 
-  remove(id: number): void {
+  remove(id: number): Observable<Todo> {
+    console.log('Task Service - remove');
     const index = this.tasks.findIndex((task) => task.id === id);
-    this.tasks.splice(index, 1);
+    const task = this.tasks.splice(index, 1);
+    return of(task[0]);
   }
 }
