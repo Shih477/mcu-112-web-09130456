@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
   }
 
   onRemove(id: number): void {
-    this.taskService.remove(id);
+    this.taskService.remove(id).subscribe(() => this.refresh$.next());
   }
 
   onStateChange({ task, state }: { task: Todo; state: boolean }): void {

@@ -30,7 +30,7 @@ export class TaskRemoteService {
     return this.httpClient.put<Todo>(`${this.url}/${id}`, task);
   }
 
-  remove(id: number): void {
-    throw new Error('Method not implemented.');
+  remove(id: number): Observable<Todo> {
+    return this.httpClient.delete<Todo>(`${this.url}/${id}`);
   }
 }
