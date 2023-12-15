@@ -12,8 +12,8 @@ export class TaskRemoteService {
 
   private readonly httpClient = inject(HttpClient);
 
-  getById(id: number): Todo | undefined {
-    throw new Error('Method not implemented.');
+  getById(id: number): Observable<Todo | undefined> {
+    return this.httpClient.get<Todo | undefined>(`${this.url}/${id}`);
   }
 
   getAll(): Observable<Todo[]> {
