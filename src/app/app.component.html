@@ -3,7 +3,7 @@
   <button type="button" (click)="onAdd()">Add</button>
   <section class="main">
     <app-todo-list
-      [tasks]="tasks"
+      [tasks]="tasks$ | async"
       (remove)="onRemove($event)"
       (view)="selectedId = $event"
       (stateChange)="onStateChange($event)"

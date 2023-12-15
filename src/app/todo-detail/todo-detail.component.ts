@@ -1,16 +1,13 @@
-import { TaskService } from './../services/task.service';
+import { CommonModule } from '@angular/common';
 import {
-  Attribute,
   Component,
   HostBinding,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
   inject,
+  Input,
   numberAttribute,
+  OnChanges,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Todo } from '../model/todo';
 import { TaskRemoteService } from '../services/task-remote.service';
 
@@ -32,7 +29,7 @@ export class TodoDetailComponent implements OnChanges {
   @HostBinding('class')
   class = 'todo-detail';
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.taskService.getById(this.id).subscribe((task) => (this.task = task));
   }
 }
