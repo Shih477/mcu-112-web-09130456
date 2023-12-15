@@ -1,35 +1,35 @@
-import { JsonPipe, NgIf } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
 import { Todo } from './model/todo';
-import { TaskService } from './services/task.service';
+import { TaskRemoteService } from './services/task-remote.service';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    NgIf,
     HeaderComponent,
     TodoListComponent,
-    FooterComponent,
     TodoDetailComponent,
-    NgIf,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  taskService = inject(TaskService);
+  taskService = inject(TaskRemoteService);
 
   tasks: Todo[] = [];
 
   selectedId?: number;
 
   ngOnInit(): void {
-    this.tasks = this.taskService.getAll();
+    this.taskService.getAll().subscribe((tasks) => (this.tasks = tasks));
   }
 
   onAdd(): void {
