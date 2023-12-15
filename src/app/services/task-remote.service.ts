@@ -25,8 +25,9 @@ export class TaskRemoteService {
     return this.httpClient.post<Todo>(this.url, task);
   }
 
-  updateState(id: number, hasFinished: boolean): void {
-    throw new Error('Method not implemented.');
+  updateState({ id, content }: Todo, hasFinished: boolean): Observable<Todo> {
+    const task = new Todo({ content, hasFinished });
+    return this.httpClient.put<Todo>(`${this.url}/${id}`, task);
   }
 
   remove(id: number): void {

@@ -8,7 +8,7 @@
     [task]="task"
     (remove)="remove.emit(task.id)"
     (view)="view.emit(task.id)"
-    (stateChange)="stateChange.emit({ id: task.id, state: $event })"
+    (stateChange)="stateChange.emit({ task: task, state: $event })"
   ></app-todo>
 </ng-template>
 
