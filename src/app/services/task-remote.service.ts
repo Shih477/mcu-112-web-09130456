@@ -20,8 +20,9 @@ export class TaskRemoteService {
     return this.httpClient.get<Todo[]>(this.url);
   }
 
-  add(content: string): void {
-    throw new Error('Method not implemented.');
+  add(content: string): Observable<Todo> {
+    const task = new Todo({ content });
+    return this.httpClient.post<Todo>(this.url, task);
   }
 
   updateState(id: number, hasFinished: boolean): void {
