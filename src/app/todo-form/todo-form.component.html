@@ -8,6 +8,26 @@
       <div *ngIf="content.hasError('required')">請輸入待辦事項內容</div>
     </div>
   </div>
+  <div class="form-item">
+    <div class="form-column">
+      <label>標籤</label>
+      <button type="button" (click)="onAddTag()">新增</button>
+    </div>
+  </div>
+  <div
+    class="form-item"
+    *ngFor="let control of tags.controls; let index = index"
+  >
+    <div class="form-column">
+      <label>
+        <button type="button" (click)="tags.removeAt(index)">刪除</button>
+      </label>
+      <input type="text" [formControl]="control" />
+    </div>
+    <div class="error-message">
+      <div *ngIf="control.hasError('required')">請輸入標籤內容</div>
+    </div>
+  </div>
 </ng-container>
 <div class="form-action">
   <button type="button" [disabled]="form.invalid" (click)="onSave()">
