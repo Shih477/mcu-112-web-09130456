@@ -1,9 +1,16 @@
 <ng-container [formGroup]="form">
   <div class="form-item">
-    <label>內容</label>
-    <input type="text" formControlName="content" />
+    <div class="form-column">
+      <label>內容</label>
+      <input type="text" formControlName="content" />
+    </div>
+    <div class="error-message">
+      <div *ngIf="content.hasError('required')">請輸入待辦事項內容</div>
+    </div>
   </div>
 </ng-container>
 <div class="form-action">
-  <button type="button" (click)="onSave()">儲存</button>
+  <button type="button" [disabled]="form.invalid" (click)="onSave()">
+    儲存
+  </button>
 </div>

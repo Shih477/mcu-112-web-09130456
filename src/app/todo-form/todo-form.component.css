@@ -4,26 +4,30 @@
 
 .form-item {
   display: flex;
+  flex-direction: column;
+}
+.form-column {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.form-item > label {
+.form-column > label {
   flex: 0 0 150px;
   text-align: center;
   font-size: 18px;
   font-weight: 400;
 }
 
-.form-item > input {
+.form-column > input {
   flex: 1 0 auto;
   padding: 5px 10px;
   font-size: 20px;
 }
 
-.form-item,
-.form-action {
-  height: 40px;
+.error-message {
+  color: red;
+  margin-left: 150px;
 }
 
 .form-action {
