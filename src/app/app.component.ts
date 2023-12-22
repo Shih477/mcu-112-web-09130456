@@ -16,6 +16,7 @@ import {
 } from 'rxjs';
 import { TaskService } from './services/task.service';
 import { TodoSearchComponent } from './todo-search/todo-search.component';
+import { TodoFormComponent } from './todo-form/todo-form.component';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,7 @@ import { TodoSearchComponent } from './todo-search/todo-search.component';
     TodoListComponent,
     TodoDetailComponent,
     TodoSearchComponent,
+    TodoFormComponent,
     FooterComponent,
   ],
   templateUrl: './app.component.html',

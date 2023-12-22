@@ -1,0 +1,10 @@
+<ng-container [formGroup]="form">
+  <div class="form-item">
+    <label>內容</label>
+    <input type="text" formControlName="content" />
+  </div>
+</ng-container>
+<div class="form-action">
+  <button type="button">儲存</button>
+</div>
+<pre>{{ form.value | json }}</pre>
