@@ -17,9 +17,10 @@ export class TaskRemoteService {
     return this.httpClient.get<Todo | undefined>(`${this.url}/${id}`);
   }
 
-  getAll(): Observable<Todo[]> {
+  getAll(content: string | null): Observable<Todo[]> {
     console.log('Task Remote Service - getAll');
-    return this.httpClient.get<Todo[]>(this.url);
+    const url = content ? `${this.url}?content_like=${content}` : this.url;
+    return this.httpClient.get<Todo[]>(url);
   }
 
   add(content: string): Observable<Todo> {

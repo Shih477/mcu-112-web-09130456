@@ -14,7 +14,7 @@ export class TaskService {
     return of(this.tasks.find((task) => task.id === id));
   }
 
-  getAll(): Observable<Todo[]> {
+  getAll(content: string | null): Observable<Todo[]> {
     console.log('Task Service - getAll');
     return of(this.tasks);
   }
