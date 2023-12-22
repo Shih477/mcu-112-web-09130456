@@ -1,7 +1,6 @@
+import { Todo } from './../model/todo';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-
-import { Todo } from '../model/todo';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +18,7 @@ export class TaskService {
     return of(this.tasks);
   }
 
-  add(content: string): Observable<Todo> {
+  add({ content }: Todo): Observable<Todo> {
     console.log('Task Service - add');
     const id =
       this.tasks.length === 0
