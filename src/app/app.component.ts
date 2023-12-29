@@ -3,7 +3,6 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { Todo } from './model/todo';
-import { TaskRemoteService } from './services/task-remote.service';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import {
@@ -17,6 +16,7 @@ import {
 import { TaskService } from './services/task.service';
 import { TodoSearchComponent } from './todo-search/todo-search.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +24,7 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
   imports: [
     NgIf,
     AsyncPipe,
+    NavBarComponent,
     HeaderComponent,
     TodoListComponent,
     TodoDetailComponent,
