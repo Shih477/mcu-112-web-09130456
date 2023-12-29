@@ -6,6 +6,7 @@
   <app-todo
     *ngFor="let task of tasks; let index = index"
     [task]="task"
+    (edit)="edit.emit(task.id)"
     (remove)="remove.emit(task.id)"
     (view)="view.emit(task.id)"
     (stateChange)="stateChange.emit({ task: task, state: $event })"

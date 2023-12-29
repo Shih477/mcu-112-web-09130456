@@ -6,6 +6,7 @@
     <app-todo-list
       [tasks]="tasks$ | async"
       (remove)="onRemove($event)"
+      (edit)="onEdit($event)"
       (view)="onView($event)"
       (stateChange)="onStateChange($event)"
     ></app-todo-list>

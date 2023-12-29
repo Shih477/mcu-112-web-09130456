@@ -53,6 +53,10 @@ export class TodoPageComponent implements OnInit {
     this.router.navigate(['todo-form']);
   }
 
+  onEdit(id: number): void {
+    this.router.navigate(['todo-form', id]);
+  }
+
   onSearch(content: string | null): void {
     this.search$.next(content);
   }
