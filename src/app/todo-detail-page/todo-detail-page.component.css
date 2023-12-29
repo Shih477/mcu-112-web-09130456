@@ -3,7 +3,7 @@ div.container {
   width: 550px;
 }
 
-.main {
-  border: solid 1px #ddd;
-  border-bottom: none;
+div.button {
+  margin-top: 10px;
+  text-align: center;
 }
