@@ -1,4 +1,11 @@
-import { Component, EventEmitter, HostBinding, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -17,9 +24,12 @@ import { NgFor, JsonPipe, NgIf } from '@angular/common';
   templateUrl: './todo-form.component.html',
   styleUrl: './todo-form.component.css',
 })
-export class TodoFormComponent {
+export class TodoFormComponent implements OnChanges {
   @HostBinding('class')
   class = 'todo-form';
+
+  @Input()
+  initData?: Todo;
 
   @Output()
   readonly save = new EventEmitter<Todo>();
@@ -46,6 +56,12 @@ export class TodoFormComponent {
 
   get tags(): FormArray<FormControl<string | null>> {
     return this.form.get('tags') as FormArray<FormControl<string | null>>;
+  }
+
+  ngOnChanges(): void {
+    if (this.initData) {
+      this.form.patchValue(this.initData);
+    }
   }
 
   onAddTag(): void {
