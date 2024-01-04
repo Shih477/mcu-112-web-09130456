@@ -28,8 +28,8 @@ export class TaskRemoteService {
     return this.httpClient.post<Todo>(this.url, task);
   }
 
-  update(id: number, { content }: Todo): Observable<Todo> {
-    const task = new Todo({ content });
+  update(id: number, { content, tags }: Todo): Observable<Todo> {
+    const task = new Todo({ content, tags });
     return this.httpClient.put<Todo>(`${this.url}/${id}`, task);
   }
 
