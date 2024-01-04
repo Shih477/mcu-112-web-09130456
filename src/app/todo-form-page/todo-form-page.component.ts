@@ -15,6 +15,8 @@ import { Observable, filter, map, switchMap, tap } from 'rxjs';
 export class TodoFormPageComponent implements OnInit {
   taskService = inject(TaskService);
 
+  title!: string;
+
   id?: number;
 
   formData?: Todo;
@@ -32,6 +34,10 @@ export class TodoFormPageComponent implements OnInit {
         switchMap((id) => this.taskService.getById(id))
       )
       .subscribe((formData) => (this.formData = formData));
+
+    this.route.data
+      .pipe(map(({ title }) => title))
+      .subscribe((title) => (this.title = title));
   }
 
   onSave(task: Todo): void {
