@@ -1,7 +1,6 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { TaskService } from './services/task.service';
 import { TaskRemoteService } from './services/task-remote.service';
@@ -9,7 +8,7 @@ import { TaskRemoteService } from './services/task-remote.service';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
-    provideRouter(routes),
+    provideRouter(routes, withComponentInputBinding()),
     { provide: TaskService, useClass: TaskRemoteService },
   ],
 };
