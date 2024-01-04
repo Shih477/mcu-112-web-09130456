@@ -29,6 +29,10 @@ export class TaskService {
     return of(task);
   }
 
+  update(id: number, { content }: Todo): Observable<Todo> {
+    throw new Error('方法未實作');
+  }
+
   updateState({ id }: Todo, hasFinished: boolean): Observable<Todo> {
     console.log('Task Service - updateState');
     const index = this.tasks.findIndex((task) => task.id === id);
